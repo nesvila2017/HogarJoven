@@ -6,11 +6,9 @@
 package modelo.dto;
 
 import database.Conexion;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Logger;
 import modelo.dao.Producto;
 import modelo.dto.interfaces.ProductoDTO;
 
