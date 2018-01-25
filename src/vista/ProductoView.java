@@ -81,6 +81,7 @@ public class ProductoView extends javax.swing.JFrame {
             } catch (IOException iOException) {
                 System.out.println("Error: "+ iOException);
             }
+            
         }else{
             JOptionPane.showMessageDialog(null, "Imagen no soportada o no encontrada.");
         }
@@ -98,7 +99,7 @@ public class ProductoView extends javax.swing.JFrame {
         txtSerie.setText("");
         txtIdProducto.setText("");
         comboCategoria.setSelectedIndex(0);
-        comboProveedor.setSelectedIndex(1);
+
     }
     
     private void estadoIncial() {
@@ -117,7 +118,7 @@ public class ProductoView extends javax.swing.JFrame {
 
     private void llenadoComboBox() {
         comboCategoria.addItem("COMIDA");
-        comboProveedor.addItem("WILTER EDUARDO");
+
     }
 
     private void llenarTabla() {
@@ -128,11 +129,11 @@ public class ProductoView extends javax.swing.JFrame {
             dtf.setValueAt(productosRegistrados.get(i).getIdProducto(), i, 0);
             dtf.setValueAt(productosRegistrados.get(i).getCodBarras(), i, 1);
             dtf.setValueAt(productosRegistrados.get(i).getDescrip(), i, 2);
-            dtf.setValueAt(productosRegistrados.get(i).getCategoria(), i, 3);
+//          dtf.setValueAt(productosRegistrados.get(i).getCategoria(), i, 3);
             dtf.setValueAt(productosRegistrados.get(i).getMarca(), i, 4);
             dtf.setValueAt(productosRegistrados.get(i).getModelo(), i, 5);
             dtf.setValueAt(productosRegistrados.get(i).getSerie(), i, 6);
-            dtf.setValueAt(productosRegistrados.get(i).getProveed(), i, 7);
+//          dtf.setValueAt(productosRegistrados.get(i).getProveed(), i, 7);
             dtf.setValueAt(productosRegistrados.get(i).getFabrica(), i, 8);
         }
 
@@ -149,39 +150,41 @@ public class ProductoView extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        txtIdProducto = new javax.swing.JTextField();
-        comboCategoria = new javax.swing.JComboBox<>();
-        jButton2 = new javax.swing.JButton();
         btnAgregar = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        txtMarca = new javax.swing.JTextField();
-        txtModelo = new javax.swing.JTextField();
-        txtSerie = new javax.swing.JTextField();
-        txtFabrica = new javax.swing.JTextField();
-        comboProveedor = new javax.swing.JComboBox<>();
-        jButton6 = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
-        checkMarca = new javax.swing.JCheckBox();
-        checkModelo = new javax.swing.JCheckBox();
-        checkSerie = new javax.swing.JCheckBox();
-        checkProvider = new javax.swing.JCheckBox();
-        checkFabrica = new javax.swing.JCheckBox();
-        txtCodBarras = new javax.swing.JTextField();
-        checkCodigo = new javax.swing.JCheckBox();
-        txtFecha = new com.toedter.calendar.JDateChooser();
-        jButton5 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        txtFecha = new com.toedter.calendar.JDateChooser();
+        jLabel11 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         textDescrip = new javax.swing.JTextArea();
+        checkModelo = new javax.swing.JCheckBox();
+        jButton5 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        imgSite = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
+        txtCodBarras = new javax.swing.JTextField();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        checkMarca = new javax.swing.JCheckBox();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        imgSite = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
+        txtModelo = new javax.swing.JTextField();
+        comboCategoria = new javax.swing.JComboBox<>();
+        jTextField1 = new javax.swing.JTextField();
+        checkCodigo = new javax.swing.JCheckBox();
+        txtMarca = new javax.swing.JTextField();
+        checkFabrica = new javax.swing.JCheckBox();
+        txtFabrica = new javax.swing.JTextField();
+        txtIdProducto = new javax.swing.JTextField();
+        txtSerie = new javax.swing.JTextField();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        checkSerie = new javax.swing.JCheckBox();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaProductos = new javax.swing.JTable();
@@ -196,39 +199,6 @@ public class ProductoView extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
         jPanel2.setMinimumSize(new java.awt.Dimension(446, 483));
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 102));
-        jLabel1.setText("ID Producto:*");
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 0, 102));
-        jLabel2.setText("Descripcion: *");
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 0, 102));
-        jLabel3.setText("Categoria: *");
-
-        txtIdProducto.setBackground(java.awt.Color.white);
-        txtIdProducto.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtIdProducto.setBorder(null);
-        txtIdProducto.setMinimumSize(new java.awt.Dimension(22, 24));
-        txtIdProducto.setPreferredSize(new java.awt.Dimension(22, 24));
-
-        comboCategoria.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        comboCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione la categoria" }));
-        comboCategoria.setBorder(null);
-        comboCategoria.setFocusable(false);
-        comboCategoria.setOpaque(false);
-
-        jButton2.setFont(new java.awt.Font("Segoe UI Semilight", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8_Search_25px.png"))); // NOI18N
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.setFocusPainted(false);
-        jButton2.setFocusable(false);
 
         btnAgregar.setFont(new java.awt.Font("Segoe UI Semilight", 1, 12)); // NOI18N
         btnAgregar.setForeground(new java.awt.Color(255, 255, 255));
@@ -261,51 +231,6 @@ public class ProductoView extends javax.swing.JFrame {
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jButton4.setIconTextGap(10);
 
-        txtMarca.setBackground(java.awt.Color.white);
-        txtMarca.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtMarca.setForeground(new java.awt.Color(51, 51, 51));
-        txtMarca.setBorder(null);
-        txtMarca.setMinimumSize(new java.awt.Dimension(22, 24));
-        txtMarca.setPreferredSize(new java.awt.Dimension(22, 24));
-
-        txtModelo.setBackground(java.awt.Color.white);
-        txtModelo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtModelo.setForeground(new java.awt.Color(51, 51, 51));
-        txtModelo.setBorder(null);
-        txtModelo.setMinimumSize(new java.awt.Dimension(22, 24));
-        txtModelo.setPreferredSize(new java.awt.Dimension(22, 24));
-
-        txtSerie.setBackground(java.awt.Color.white);
-        txtSerie.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtSerie.setForeground(new java.awt.Color(51, 51, 51));
-        txtSerie.setBorder(null);
-        txtSerie.setMinimumSize(new java.awt.Dimension(22, 24));
-        txtSerie.setPreferredSize(new java.awt.Dimension(22, 24));
-
-        txtFabrica.setBackground(java.awt.Color.white);
-        txtFabrica.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtFabrica.setForeground(new java.awt.Color(51, 51, 51));
-        txtFabrica.setBorder(null);
-        txtFabrica.setMinimumSize(new java.awt.Dimension(22, 24));
-        txtFabrica.setPreferredSize(new java.awt.Dimension(22, 24));
-
-        comboProveedor.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        comboProveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el proveedor" }));
-        comboProveedor.setFocusable(false);
-        comboProveedor.setOpaque(false);
-
-        jButton6.setFont(new java.awt.Font("Segoe UI Semilight", 1, 12)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8_Supplier_25px_1.png"))); // NOI18N
-        jButton6.setBorder(null);
-        jButton6.setBorderPainted(false);
-        jButton6.setContentAreaFilled(false);
-        jButton6.setFocusable(false);
-
-        jLabel11.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Fecha Registro:*");
-
         jButton7.setFont(new java.awt.Font("Segoe UI Semilight", 1, 12)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8_Robot_48px.png"))); // NOI18N
@@ -318,16 +243,29 @@ public class ProductoView extends javax.swing.JFrame {
         jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jButton7.setIconTextGap(10);
 
-        checkMarca.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        checkMarca.setForeground(new java.awt.Color(255, 255, 255));
-        checkMarca.setText("Marca:");
-        checkMarca.setFocusable(false);
-        checkMarca.setOpaque(false);
-        checkMarca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkMarcaActionPerformed(evt);
-            }
-        });
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8_Scan_Stock_96px.png"))); // NOI18N
+
+        jPanel3.setOpaque(false);
+
+        txtFecha.setBackground(java.awt.Color.white);
+        txtFecha.setFocusable(false);
+        txtFecha.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtFecha.setOpaque(false);
+        txtFecha.setPreferredSize(new java.awt.Dimension(132, 22));
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Fecha Registro:*");
+
+        textDescrip.setBackground(new java.awt.Color(255, 255, 255));
+        textDescrip.setColumns(20);
+        textDescrip.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        textDescrip.setLineWrap(true);
+        textDescrip.setRows(5);
+        textDescrip.setWrapStyleWord(true);
+        textDescrip.setBorder(null);
+        textDescrip.setDoubleBuffered(true);
+        jScrollPane2.setViewportView(textDescrip);
 
         checkModelo.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         checkModelo.setForeground(new java.awt.Color(255, 255, 255));
@@ -340,38 +278,28 @@ public class ProductoView extends javax.swing.JFrame {
             }
         });
 
-        checkSerie.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        checkSerie.setForeground(new java.awt.Color(255, 255, 255));
-        checkSerie.setText("Serie:");
-        checkSerie.setFocusable(false);
-        checkSerie.setOpaque(false);
-        checkSerie.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkSerieActionPerformed(evt);
-            }
-        });
+        jButton5.setFont(new java.awt.Font("Segoe UI Semilight", 1, 12)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8_Add_Tag_25px.png"))); // NOI18N
+        jButton5.setBorder(null);
+        jButton5.setBorderPainted(false);
+        jButton5.setContentAreaFilled(false);
+        jButton5.setFocusable(false);
 
-        checkProvider.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        checkProvider.setForeground(new java.awt.Color(255, 0, 102));
-        checkProvider.setText("Proveedor:*");
-        checkProvider.setFocusable(false);
-        checkProvider.setOpaque(false);
-        checkProvider.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkProviderActionPerformed(evt);
-            }
-        });
+        jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 24));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8_Open_Box_48px.png"))); // NOI18N
+        jLabel6.setText("Registro de Productos");
 
-        checkFabrica.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        checkFabrica.setForeground(new java.awt.Color(255, 255, 255));
-        checkFabrica.setText("Fabricante:");
-        checkFabrica.setFocusable(false);
-        checkFabrica.setOpaque(false);
-        checkFabrica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkFabricaActionPerformed(evt);
-            }
-        });
+        jButton9.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(51, 51, 51));
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8_Edit_Image_48px.png"))); // NOI18N
+        jButton9.setBorder(null);
+        jButton9.setBorderPainted(false);
+        jButton9.setContentAreaFilled(false);
+        jButton9.setFocusPainted(false);
+        jButton9.setFocusable(false);
+        jButton9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         txtCodBarras.setBackground(java.awt.Color.white);
         txtCodBarras.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -380,6 +308,49 @@ public class ProductoView extends javax.swing.JFrame {
         txtCodBarras.setMinimumSize(new java.awt.Dimension(22, 24));
         txtCodBarras.setName(""); // NOI18N
         txtCodBarras.setPreferredSize(new java.awt.Dimension(22, 24));
+
+        jCheckBox1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        jCheckBox1.setText("Fecha Fabric.:");
+
+        checkMarca.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        checkMarca.setForeground(new java.awt.Color(255, 255, 255));
+        checkMarca.setText("Marca:");
+        checkMarca.setFocusable(false);
+        checkMarca.setOpaque(false);
+        checkMarca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkMarcaActionPerformed(evt);
+            }
+        });
+
+        imgSite.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imgSite.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8_Image_File_48px.png"))); // NOI18N
+        imgSite.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 204, 255), 1, true));
+        imgSite.setDoubleBuffered(true);
+        imgSite.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        jButton8.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(51, 51, 51));
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8_Remove_Image_48px.png"))); // NOI18N
+        jButton8.setBorder(null);
+        jButton8.setBorderPainted(false);
+        jButton8.setContentAreaFilled(false);
+        jButton8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+
+        txtModelo.setBackground(java.awt.Color.white);
+        txtModelo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtModelo.setForeground(new java.awt.Color(51, 51, 51));
+        txtModelo.setBorder(null);
+        txtModelo.setMinimumSize(new java.awt.Dimension(22, 24));
+        txtModelo.setPreferredSize(new java.awt.Dimension(22, 24));
+
+        comboCategoria.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        comboCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione la categoria" }));
+        comboCategoria.setBorder(null);
+        comboCategoria.setFocusable(false);
+        comboCategoria.setOpaque(false);
+
+        jTextField1.setText("jTextField1");
 
         checkCodigo.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         checkCodigo.setForeground(new java.awt.Color(255, 255, 255));
@@ -392,42 +363,77 @@ public class ProductoView extends javax.swing.JFrame {
             }
         });
 
-        txtFecha.setBackground(java.awt.Color.white);
-        txtFecha.setFocusable(false);
-        txtFecha.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtFecha.setOpaque(false);
-        txtFecha.setPreferredSize(new java.awt.Dimension(132, 22));
+        txtMarca.setBackground(java.awt.Color.white);
+        txtMarca.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtMarca.setForeground(new java.awt.Color(51, 51, 51));
+        txtMarca.setBorder(null);
+        txtMarca.setMinimumSize(new java.awt.Dimension(22, 24));
+        txtMarca.setPreferredSize(new java.awt.Dimension(22, 24));
 
-        jButton5.setFont(new java.awt.Font("Segoe UI Semilight", 1, 12)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8_Add_Tag_25px.png"))); // NOI18N
-        jButton5.setBorder(null);
-        jButton5.setBorderPainted(false);
-        jButton5.setContentAreaFilled(false);
-        jButton5.setFocusable(false);
+        checkFabrica.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        checkFabrica.setForeground(new java.awt.Color(255, 255, 255));
+        checkFabrica.setText("Fabricante:");
+        checkFabrica.setFocusable(false);
+        checkFabrica.setOpaque(false);
+        checkFabrica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkFabricaActionPerformed(evt);
+            }
+        });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8_Scan_Stock_96px.png"))); // NOI18N
+        txtFabrica.setBackground(java.awt.Color.white);
+        txtFabrica.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtFabrica.setForeground(new java.awt.Color(51, 51, 51));
+        txtFabrica.setBorder(null);
+        txtFabrica.setMinimumSize(new java.awt.Dimension(22, 24));
+        txtFabrica.setPreferredSize(new java.awt.Dimension(22, 24));
 
-        textDescrip.setBackground(new java.awt.Color(255, 255, 255));
-        textDescrip.setColumns(20);
-        textDescrip.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        textDescrip.setLineWrap(true);
-        textDescrip.setRows(5);
-        textDescrip.setWrapStyleWord(true);
-        textDescrip.setBorder(null);
-        textDescrip.setDoubleBuffered(true);
-        jScrollPane2.setViewportView(textDescrip);
+        txtIdProducto.setBackground(java.awt.Color.white);
+        txtIdProducto.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtIdProducto.setBorder(null);
+        txtIdProducto.setMinimumSize(new java.awt.Dimension(22, 24));
+        txtIdProducto.setPreferredSize(new java.awt.Dimension(22, 24));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 24));
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8_Open_Box_48px.png"))); // NOI18N
-        jLabel6.setText("Registro de Productos");
+        txtSerie.setBackground(java.awt.Color.white);
+        txtSerie.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtSerie.setForeground(new java.awt.Color(51, 51, 51));
+        txtSerie.setBorder(null);
+        txtSerie.setMinimumSize(new java.awt.Dimension(22, 24));
+        txtSerie.setPreferredSize(new java.awt.Dimension(22, 24));
 
-        imgSite.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imgSite.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8_Image_File_48px.png"))); // NOI18N
-        imgSite.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 204, 255), 1, true));
-        imgSite.setDoubleBuffered(true);
-        imgSite.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jCheckBox2.setText("Lote:");
+
+        checkSerie.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        checkSerie.setForeground(new java.awt.Color(255, 255, 255));
+        checkSerie.setText("Serie:");
+        checkSerie.setFocusable(false);
+        checkSerie.setOpaque(false);
+        checkSerie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkSerieActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 0, 102));
+        jLabel3.setText("Categoria: *");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 0, 102));
+        jLabel2.setText("Descripcion: *");
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 102));
+        jLabel1.setText("ID Producto:*");
+
+        jButton2.setFont(new java.awt.Font("Segoe UI Semilight", 1, 12)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8_Search_25px.png"))); // NOI18N
+        jButton2.setBorder(null);
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.setFocusPainted(false);
+        jButton2.setFocusable(false);
 
         jButton1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(51, 51, 51));
@@ -448,181 +454,165 @@ public class ProductoView extends javax.swing.JFrame {
             }
         });
 
-        jButton9.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(51, 51, 51));
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8_Edit_Image_48px.png"))); // NOI18N
-        jButton9.setBorder(null);
-        jButton9.setBorderPainted(false);
-        jButton9.setContentAreaFilled(false);
-        jButton9.setFocusPainted(false);
-        jButton9.setFocusable(false);
-        jButton9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-
-        jButton8.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(51, 51, 51));
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons8_Remove_Image_48px.png"))); // NOI18N
-        jButton8.setBorder(null);
-        jButton8.setBorderPainted(false);
-        jButton8.setContentAreaFilled(false);
-        jButton8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        org.jdesktop.layout.GroupLayout jPanel3Layout = new org.jdesktop.layout.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel3Layout.createSequentialGroup()
+                        .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jLabel2)
+                            .add(jLabel3)
+                            .add(jLabel11))
+                        .add(20, 20, 20)
+                        .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jPanel3Layout.createSequentialGroup()
+                                .add(comboCategoria, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 152, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jButton5))
+                            .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                                .add(txtFecha, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 189, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(jPanel3Layout.createSequentialGroup()
+                                    .add(txtIdProducto, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                    .add(jButton2)))))
+                    .add(jLabel1)
+                    .add(jLabel6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 250, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(11, 11, 11)
+                .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .add(jButton9)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jButton8)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 53, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(18, 18, 18)
+                        .add(imgSite, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 95, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jPanel3Layout.createSequentialGroup()
+                        .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(checkMarca)
+                            .add(checkModelo)
+                            .add(checkSerie)
+                            .add(checkCodigo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(checkFabrica, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 93, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jCheckBox1)
+                            .add(jCheckBox2))
+                        .add(11, 11, 11)
+                        .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                            .add(jDateChooser1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(txtCodBarras, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(txtModelo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(txtSerie, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(txtMarca, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(txtFabrica, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 179, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel3Layout.createSequentialGroup()
+                        .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(imgSite, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 95, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jButton8)
+                            .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 48, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jButton9))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(checkCodigo)
+                            .add(txtCodBarras, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                .add(checkMarca)
+                                .add(txtMarca, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(txtIdProducto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(jLabel1))
+                            .add(jButton2)))
+                    .add(jPanel3Layout.createSequentialGroup()
+                        .add(jLabel6)
+                        .add(60, 60, 60)
+                        .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(txtFecha, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 23, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabel11, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 23, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel3Layout.createSequentialGroup()
+                        .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(txtModelo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(checkModelo)
+                            .add(jLabel2))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(txtSerie, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(checkSerie))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(txtFabrica, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(checkFabrica))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jCheckBox1)
+                            .add(jDateChooser1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jCheckBox2)
+                            .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                    .add(jPanel3Layout.createSequentialGroup()
+                        .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                .add(comboCategoria, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(jLabel3))
+                            .add(jButton5))
+                        .add(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
 
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel2Layout.createSequentialGroup()
-                .add(15, 15, 15)
-                .add(btnAgregar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 131, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(18, 18, 18)
-                .add(jButton4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 131, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(18, 18, 18)
-                .add(jButton7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 155, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(jLabel4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 93, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(15, 15, 15))
-            .add(jPanel2Layout.createSequentialGroup()
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap(44, Short.MAX_VALUE)
-                        .add(jLabel6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 250, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(btnAgregar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 131, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(jButton4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 131, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(jButton7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 155, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(jLabel4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 93, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(31, 31, 31))
                     .add(jPanel2Layout.createSequentialGroup()
-                        .add(38, 38, 38)
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel1)
-                            .add(jLabel11))
-                        .add(0, 0, Short.MAX_VALUE)))
-                .add(376, 376, 376))
-            .add(jPanel2Layout.createSequentialGroup()
-                .add(38, 38, 38)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jLabel2)
-                    .add(jLabel3)
-                    .add(checkProvider))
-                .add(13, 13, 13)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(txtFecha, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 124, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 189, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jPanel2Layout.createSequentialGroup()
-                                .add(comboCategoria, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 152, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(jButton5))
-                            .add(jPanel2Layout.createSequentialGroup()
-                                .add(comboProveedor, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 153, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(jButton6))
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .add(txtIdProducto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 158, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(jButton2)))
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .add(40, 40, 40)
-                                .add(jButton9)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(jButton8)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 53, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(12, 12, 12)
-                                .add(imgSite, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 95, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(jPanel2Layout.createSequentialGroup()
-                                .add(18, 18, 18)
-                                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(jPanel2Layout.createSequentialGroup()
-                                        .add(checkFabrica, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 93, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(18, 18, 18)
-                                        .add(txtFabrica, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 179, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .add(jPanel2Layout.createSequentialGroup()
-                                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                            .add(checkMarca)
-                                            .add(checkModelo)
-                                            .add(checkSerie)
-                                            .add(checkCodigo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                        .add(11, 11, 11)
-                                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                            .add(txtCodBarras, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 179, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                            .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                                .add(org.jdesktop.layout.GroupLayout.LEADING, txtModelo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 179, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                                .add(txtSerie, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 179, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                                .add(txtMarca, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 179, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))))))
-                .addContainerGap())
+                        .add(jPanel3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel2Layout.createSequentialGroup()
-                .add(10, 10, 10)
+                .add(18, 18, 18)
+                .add(jPanel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(18, 18, 18)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel6)
-                            .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 48, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jButton8)
-                            .add(jButton9))
-                        .add(18, 18, Short.MAX_VALUE)
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(txtFecha, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(jLabel11, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(12, 12, 12)
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(txtIdProducto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel1))
-                        .add(14, 14, 14)
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jPanel2Layout.createSequentialGroup()
-                                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                                    .add(txtMarca, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(checkMarca))
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                                    .add(txtModelo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(checkModelo))
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                                    .add(txtSerie, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(checkSerie))
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                                    .add(txtFabrica, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(checkFabrica))
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(jLabel4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 80, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(jPanel2Layout.createSequentialGroup()
-                                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(jLabel2)
-                                    .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 78, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                    .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                                        .add(jLabel3)
-                                        .add(comboCategoria, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .add(jButton5))
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(jButton6)
-                                    .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                                        .add(comboProveedor, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(checkProvider)))
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                                    .add(btnAgregar)
-                                    .add(jButton4)
-                                    .add(jButton7)))))
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(imgSite, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 95, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jButton2)
-                            .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                                .add(checkCodigo)
-                                .add(txtCodBarras, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                        .add(0, 0, Short.MAX_VALUE)))
-                .add(62, 62, 62))
+                    .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                        .add(jButton4)
+                        .add(btnAgregar)
+                        .add(jButton7))
+                    .add(jLabel4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 80, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(74, 74, 74))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 430));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 450));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jPanel1.setMinimumSize(new java.awt.Dimension(581, 468));
 
@@ -673,7 +663,7 @@ public class ProductoView extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
+                .addContainerGap(40, Short.MAX_VALUE)
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                     .add(jButton10)
                     .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 499, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
@@ -682,14 +672,14 @@ public class ProductoView extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel1Layout.createSequentialGroup()
-                .add(30, 30, 30)
-                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 309, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(72, Short.MAX_VALUE)
+                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 275, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(18, 18, 18)
                 .add(jButton10)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .add(47, 47, 47))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(666, -8, 560, 440));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(656, -8, 570, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -718,10 +708,6 @@ public class ProductoView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_checkModeloActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_jButton10ActionPerformed
-
     private void checkSerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkSerieActionPerformed
         if (this.checkSerie.isSelected()) {
             txtSerie.setEnabled(true);
@@ -744,27 +730,8 @@ public class ProductoView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_checkFabricaActionPerformed
 
-    private void tablaProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaProductosMouseClicked
-        Producto p = new Producto();
-        p.setIdProducto((Integer) tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 0));
-        p.setCodBarras((Integer) tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 1));
-        p.setDescrip((String) tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 2));
-        p.setCategoria((String) tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 3));
-        p.setMarca((String) tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 4));
-        p.setModelo((String) tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 5));
-        p.setSerie((String) tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 6));
-        p.setProveed((String) tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 7));
-        p.setFabrica((String) tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 8));
-
-        txtIdProducto.setText(p.getIdProducto().toString());
-        txtCodBarras.setText(p.getCodBarras().toString());
-        textDescrip.setText(p.getDescrip());
-
-
-    }//GEN-LAST:event_tablaProductosMouseClicked
-
     private boolean validarCampos() {
-        if (txtIdProducto.getText().equals("") || txtFecha.getDate().equals("") || textDescrip.getText().equals("") || comboCategoria.getSelectedIndex() == 0 || comboProveedor.getSelectedIndex() == 0 ) {
+        if (txtIdProducto.getText().equals("") || txtFecha.getDate().equals("") || textDescrip.getText().equals("") || comboCategoria.getSelectedIndex() == 0 /*|| comboProveedor.getSelectedIndex() == 0 */) {
             JOptionPane.showMessageDialog(null, "La información del producto esta vacía. \n El llenado de los campos marcados con un '*' son obligatorios. \n Ingrese la información correspondiente en cada uno.", "Error - Campos Vacios.", JOptionPane.ERROR_MESSAGE);
             return false;
         } else {
@@ -780,8 +747,8 @@ public class ProductoView extends javax.swing.JFrame {
             Producto p = new Producto();
             String camposNoRegistrados =" Campos no Registrados: \n";
             p.setIdProducto(Integer.parseInt(txtIdProducto.getText()));
-            p.setCategoria(String.valueOf(comboCategoria.getSelectedIndex()));
-            p.setProveed(String.valueOf(comboProveedor.getSelectedIndex()));
+        //    p.setCategoria(String.valueOf(comboCategoria.getSelectedIndex()));
+        //    p.setProveed(String.valueOf(comboProveedor.getSelectedIndex()));
             
             p.setDescrip(textDescrip.getText());
             if (!txtMarca.getText().equals("")) {
@@ -846,16 +813,27 @@ public class ProductoView extends javax.swing.JFrame {
        imagenProducto();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void checkProviderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkProviderActionPerformed
-        if (this.checkProvider.isSelected()) {
-            comboProveedor.setEnabled(true);
-            comboProveedor.setEditable(true);
-        } else {
-            comboProveedor.setEnabled(false);
-            comboProveedor.setEditable(false);
-            comboProveedor.setSelectedIndex(0);
-        }
-    }//GEN-LAST:event_checkProviderActionPerformed
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void tablaProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaProductosMouseClicked
+        Producto p = new Producto();
+        p.setIdProducto((Integer) tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 0));
+        p.setCodBarras((Integer) tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 1));
+        p.setDescrip((String) tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 2));
+//        p.setCategoria((String) tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 3));
+        p.setMarca((String) tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 4));
+        p.setModelo((String) tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 5));
+        p.setSerie((String) tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 6));
+//        p.setProveed((String) tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 7));
+        p.setFabrica((String) tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 8));
+
+        txtIdProducto.setText(p.getIdProducto().toString());
+        txtCodBarras.setText(p.getCodBarras().toString());
+        textDescrip.setText(p.getDescrip());
+
+    }//GEN-LAST:event_tablaProductosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -898,20 +876,20 @@ public class ProductoView extends javax.swing.JFrame {
     private javax.swing.JCheckBox checkFabrica;
     private javax.swing.JCheckBox checkMarca;
     private javax.swing.JCheckBox checkModelo;
-    private javax.swing.JCheckBox checkProvider;
     private javax.swing.JCheckBox checkSerie;
     private javax.swing.JComboBox<String> comboCategoria;
-    private javax.swing.JComboBox<String> comboProveedor;
     private javax.swing.JLabel imgSite;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
@@ -920,8 +898,10 @@ public class ProductoView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTable tablaProductos;
     private javax.swing.JTextArea textDescrip;
     private javax.swing.JTextField txtCodBarras;
