@@ -5,10 +5,44 @@
  */
 package modelo.dao;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Fucker
  */
-public class Categoria {
+public class Categoria implements Serializable{
+    private Integer idCategoria;
+    private String descripCat;
+
+    public Categoria() {
+    }
+    
+    public Categoria(Integer idCategoria, String descripCat) {
+        this.idCategoria = idCategoria;
+        this.descripCat = descripCat;
+    }
+
+    public Integer getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(Integer idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+
+    public String getDescripCat() {
+        return descripCat;
+    }
+
+    public void setDescripCat(String descripCat) {
+        this.descripCat = descripCat;
+    }
+
+    @Override
+    public String toString() {
+        return "Categoria{" + "idCategoria=" + idCategoria + ", descripCat=" + descripCat + '}';
+    }
+    
     
 }

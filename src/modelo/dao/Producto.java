@@ -5,6 +5,7 @@
  */
 package modelo.dao;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Timestamp;
 
@@ -12,16 +13,15 @@ import java.sql.Timestamp;
  *
  * @author Fucker
  */
-public class Producto {
+public class Producto implements Serializable{
     
     private Integer idProducto;
     private Integer codBarras;
     private String descrip;
-    private String categoria;
+    private Integer idCategoria;
     private String marca;
     private String modelo;
     private String serie;
-    private String proveed;
     private String fabrica;
     private Date fechaFab;
     private String lote;
@@ -30,31 +30,27 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(Integer idProducto, Integer codBarras, String descrip, String categoria, String marca, String modelo, String serie, String proveed, String fabrica, Date fechaFab, String lote, Timestamp fechaReg) {
+    public Producto(Integer idProducto, Integer codBarras, String descrip, Integer idCategoria, String marca, String modelo, String serie, String fabrica, Date fechaFab, String lote, Timestamp fechaReg) {
         this.idProducto = idProducto;
         this.codBarras = codBarras;
         this.descrip = descrip;
-        this.categoria = categoria;
+        this.idCategoria = idCategoria;
         this.marca = marca;
         this.modelo = modelo;
         this.serie = serie;
-        this.proveed = proveed;
         this.fabrica = fabrica;
         this.fechaFab = fechaFab;
         this.lote = lote;
         this.fechaReg = fechaReg;
     }
 
-    public Producto(Integer idProducto, String descrip, String categoria, String proveed) {
+    public Producto(Integer idProducto, String descrip, Integer idCategoria, Timestamp fechaReg) {
         this.idProducto = idProducto;
         this.descrip = descrip;
-        this.categoria = categoria;
-        this.proveed = proveed;
+        this.idCategoria = idCategoria;
+        this.fechaReg = fechaReg;
     }
 
-    
-    
-  
     public Integer getIdProducto() {
         return idProducto;
     }
@@ -79,12 +75,12 @@ public class Producto {
         this.descrip = descrip;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public Integer getIdCategoria() {
+        return idCategoria;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setIdCategoria(Integer idCategoria) {
+        this.idCategoria = idCategoria;
     }
 
     public String getMarca() {
@@ -111,14 +107,6 @@ public class Producto {
         this.serie = serie;
     }
 
-    public String getProveed() {
-        return proveed;
-    }
-
-    public void setProveed(String proveed) {
-        this.proveed = proveed;
-    }
-
     public String getFabrica() {
         return fabrica;
     }
@@ -135,6 +123,14 @@ public class Producto {
         this.fechaFab = fechaFab;
     }
 
+    public String getLote() {
+        return lote;
+    }
+
+    public void setLote(String lote) {
+        this.lote = lote;
+    }
+
     public Timestamp getFechaReg() {
         return fechaReg;
     }
@@ -143,21 +139,10 @@ public class Producto {
         this.fechaReg = fechaReg;
     }
 
-    public String getLote() {
-        return lote;
-    }
-
-    public void setLote(String lote) {
-        this.lote = lote;
-    }
-    
-    
-
     @Override
     public String toString() {
-        return "Producto{" + "idProducto=" + idProducto + ", codBarras=" + codBarras + ", descrip=" + descrip + ", categoria=" + categoria + ", marca=" + marca + ", modelo=" + modelo + ", serie=" + serie + ", proveed=" + proveed + ", fabrica=" + fabrica + '}';
+        return "Producto{" + "idProducto=" + idProducto + ", codBarras=" + codBarras + ", descrip=" + descrip + ", idCategoria=" + idCategoria + ", marca=" + marca + ", modelo=" + modelo + ", serie=" + serie + ", fabrica=" + fabrica + ", fechaFab=" + fechaFab + ", lote=" + lote + ", fechaReg=" + fechaReg + '}';
     }
-    
     
     
 }
