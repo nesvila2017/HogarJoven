@@ -6,7 +6,7 @@
 package controlador;
 
 import java.util.ArrayList;
-import modelo.dao.Producto;
+import modelo.dao.ProductoDAO;
 import modelo.dto.ProductoDTOImpl;
 
 /**
@@ -15,7 +15,7 @@ import modelo.dto.ProductoDTOImpl;
  */
 public class GestionProducto implements GestionProductoInterface {
 
-    private ArrayList<Producto> contenedorProducto;
+    private ArrayList<ProductoDAO> contenedorProducto;
     private ProductoDTOImpl pdto = new ProductoDTOImpl();
     
     public GestionProducto() {
@@ -23,8 +23,8 @@ public class GestionProducto implements GestionProductoInterface {
         //contenedorProducto.add(new Producto(1, 123, "Salchichon", "Porquerias", "Burro","Uña", "Vieja", "Jorge", "La Fama de Jorge"));
     }
 
-    private boolean existeProducto(Producto p) {
-        for (Producto producto : contenedorProducto) {
+    private boolean existeProducto(ProductoDAO p) {
+        for (ProductoDAO producto : contenedorProducto) {
             if (producto.equals(p)) {
                 return true;
             }
@@ -32,13 +32,13 @@ public class GestionProducto implements GestionProductoInterface {
         return false;
     }
 
-    public boolean registroProductos(Producto p){
-        pdto.registrarProducto(p, 1, 2);
+    public boolean registroProductos(ProductoDAO p){
+        pdto.registrarProducto(p);
         return true;
     }
     
     @Override
-    public boolean registrarProducto(Producto p) {
+    public boolean registrarProducto(ProductoDAO p) {
         if (existeProducto(p)) {
             return false;
         } else {
@@ -48,7 +48,7 @@ public class GestionProducto implements GestionProductoInterface {
     }
 
     @Override
-    public Producto busquedaProductoID(int id) {
+    public ProductoDAO busquedaProductoID(int id) {
         for (int i = 0; i < contenedorProducto.size(); i++) {
             if (contenedorProducto.get(i).getIdProducto().equals(id)) {
                 return contenedorProducto.get(i);
@@ -59,17 +59,17 @@ public class GestionProducto implements GestionProductoInterface {
     }
 
     @Override
-    public Producto busquedaPorNombre(String nom) {
+    public ProductoDAO busquedaPorNombre(String nom) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean modificarProducto(Producto p) {
+    public boolean modificarProducto(ProductoDAO p) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean eliminarProducto(Producto p) {
+    public boolean eliminarProducto(ProductoDAO p) {
         if (existeProducto(p)) {
 
             return contenedorProducto.remove(p);
@@ -79,8 +79,9 @@ public class GestionProducto implements GestionProductoInterface {
     }
 
     @Override
-    public ArrayList<Producto> mostrarProductos() {
-        return contenedorProducto;
+    public ArrayList<ProductoDAO> mostrarProductos() {
+        
+        return pdto.mostrarProductos();
     }
 
 }

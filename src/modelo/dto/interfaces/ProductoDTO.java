@@ -6,7 +6,7 @@
 package modelo.dto.interfaces;
 
 import java.util.ArrayList;
-import modelo.dao.Producto;
+import modelo.dao.ProductoDAO;
 
 /**
  *
@@ -14,18 +14,18 @@ import modelo.dao.Producto;
  */
 public interface ProductoDTO {
 
-    public boolean registrarProducto(Producto p,int idCat, int idProv);
-    public boolean modificarProducto(Producto p);
+    public boolean registrarProducto(ProductoDAO p);
+    public boolean modificarProducto(ProductoDAO p);
     public boolean eliminarPorID(int id);
     public boolean estadoProducto(boolean estado);
-    public Producto buscarProductoId(int id);
-    public Producto buscarProductoCodBarra(int codBarra);
-    public ArrayList<Producto> buscarProductoDescripcion(String busqueda);
-    public ArrayList<Producto> buscarProductosEstado(boolean estado);
-    public ArrayList<Producto> buscarProductosMarca(String busqueda);
-    public ArrayList<Producto> buscarProductosModelo(String busqueda);
-    public ArrayList<Producto> buscarProductosCategoria(String busqueda);
-    public ArrayList<Producto> buscarProductosProveedor(String busqueda);
-    public ArrayList<Producto> mostrarProductos();
+    public ProductoDAO buscarProductoId(int id);
+    public ProductoDAO buscarProductoCodBarra(int codBarra);
+    public ArrayList<ProductoDAO> buscarProductoDescripcion(String busqueda);
+    public ArrayList<ProductoDAO> buscarProductosEstado(boolean estado);
+    public ArrayList<ProductoDAO> buscarProductosMarca(String busqueda);
+    public ArrayList<ProductoDAO> buscarProductosModelo(String busqueda);
+    public ArrayList<ProductoDAO> buscarProductosCategoria(String busqueda);
+    public ArrayList<ProductoDAO> buscarProductosProveedor(String busqueda);
+    public ArrayList<ProductoDAO> mostrarProductos();
     
 }

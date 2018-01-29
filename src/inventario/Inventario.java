@@ -5,6 +5,9 @@
  */
 package inventario;
 
+
+import vista.Inicio;
+
 /**
  *
  * @author Fucker
@@ -16,6 +19,8 @@ public class Inventario {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+       Inicio i = Inicio.iniciarLogueo();
+       i.setVisible(true);
     }
     
 }

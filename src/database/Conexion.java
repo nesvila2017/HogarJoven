@@ -29,14 +29,19 @@ public class Conexion {
     
     public Connection crearConexion(){
         try {
+            
             Class.forName(DRIVER);
             conexion = DriverManager.getConnection(URL,USER,PASS);
             conexion.setAutoCommit(false);
             conexion.setSavepoint();
+            System.out.println("Conexion Realizada");
+            Logger.getLogger(Conexion.class.getName()).log(Level.FINE, "Conexion:", "Conexión Realizada.");
+            return conexion;
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+            return conexion;
         }
-        return conexion;
+        
     }
     
     private boolean confirmarTransaccion(){

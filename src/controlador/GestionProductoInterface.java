@@ -6,7 +6,7 @@
 package controlador;
 
 import java.util.ArrayList;
-import modelo.dao.Producto;
+import modelo.dao.ProductoDAO;
 
 /**
  *
@@ -15,12 +15,12 @@ import modelo.dao.Producto;
 public interface GestionProductoInterface {
     
     
-    public boolean registrarProducto(Producto p);
-    public Producto busquedaProductoID(int id);
-    public Producto busquedaPorNombre(String nom);
-    public boolean modificarProducto(Producto p);
-    public boolean eliminarProducto(Producto p);
-    public ArrayList<Producto> mostrarProductos();
+    public boolean registrarProducto(ProductoDAO p);
+    public ProductoDAO busquedaProductoID(int id);
+    public ProductoDAO busquedaPorNombre(String nom);
+    public boolean modificarProducto(ProductoDAO p);
+    public boolean eliminarProducto(ProductoDAO p);
+    public ArrayList<ProductoDAO> mostrarProductos();
     
       
     
