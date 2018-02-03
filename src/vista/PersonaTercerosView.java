@@ -6,6 +6,8 @@
 
 package Vista;
 
+import vista.ActividadesView;
+
 /**
  *
  * @author LENOVO
@@ -1024,7 +1026,8 @@ public class PersonaTercerosView extends javax.swing.JFrame {
     }//GEN-LAST:event_checkProv1ActionPerformed
 
     private void btnActividadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActividadesActionPerformed
-        ActividadesView cv = new ActividadesView();
+        ActividadesView cv = null;
+        cv=cv.inicializarActividades();
         cv.setVisible(true);
     }//GEN-LAST:event_btnActividadesActionPerformed
 

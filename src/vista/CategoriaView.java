@@ -5,6 +5,11 @@
  */
 package vista;
 
+import controlador.GestionCategoriaImpl;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import modelo.dto.CategoriaDTO;
+
 /**
  *
  * @author Fucker
@@ -15,10 +20,12 @@ public class CategoriaView extends javax.swing.JFrame {
      * Creates new form CategoriaView
      */
     private static CategoriaView iniciarCategoria;
-    
+    private GestionCategoriaImpl gc;
     private CategoriaView() {
+        gc = new GestionCategoriaImpl();
         setUndecorated(false);
         initComponents();
+        llenarTabla();
         setLocationRelativeTo(null);
     }
     
@@ -32,6 +39,19 @@ public class CategoriaView extends javax.swing.JFrame {
         }
     }
     
+    
+    private void llenarTabla(){
+        ArrayList<CategoriaDTO> categorias = gc.mostrarCategorias();
+        final String[] titulos = {"ID Categoria", "Categoria"};
+        
+        DefaultTableModel dtf = new DefaultTableModel(titulos, categorias.size());
+        for (int i = 0; i <  categorias.size(); i++) {
+            dtf.setValueAt(categorias.get(i).getIdCategoria(), i, 0);
+            dtf.setValueAt(categorias.get(i).getDescripCat(), i, 1);
+        }
+        tablaCategoria.setModel(dtf);
+        
+    }
     
 
     /**
@@ -50,7 +70,7 @@ public class CategoriaView extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaCategoria = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -93,7 +113,7 @@ public class CategoriaView extends javax.swing.JFrame {
         jTextField1.setMinimumSize(new java.awt.Dimension(14, 22));
         jTextField1.setPreferredSize(new java.awt.Dimension(14, 22));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaCategoria.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -101,7 +121,7 @@ public class CategoriaView extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaCategoria);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
@@ -115,7 +135,6 @@ public class CategoriaView extends javax.swing.JFrame {
         jButton6.setBorder(null);
         jButton6.setBorderPainted(false);
         jButton6.setContentAreaFilled(false);
-        jButton6.setOpaque(false);
 
         jLabel1.setBackground(new java.awt.Color(22, 29, 64));
         jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
@@ -385,11 +404,7 @@ public class CategoriaView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnClose1;
-    private javax.swing.JLabel btnClose2;
-    private javax.swing.JLabel btnClose3;
     private javax.swing.JLabel btnMinimized1;
-    private javax.swing.JLabel btnMinimized2;
-    private javax.swing.JLabel btnMinimized3;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JComboBox<String> comboEmpresa;
@@ -401,15 +416,13 @@ public class CategoriaView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTable tablaCategoria;
     // End of variables declaration//GEN-END:variables
 }
